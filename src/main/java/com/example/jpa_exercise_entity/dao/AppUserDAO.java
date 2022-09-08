@@ -6,5 +6,5 @@ public interface AppUserDAO {
 
     AppUser findById (int id);
     AppUser save (AppUser appUser);
-    AppUser delete (AppUser appUser);
+    void delete (AppUser appUser);
 }

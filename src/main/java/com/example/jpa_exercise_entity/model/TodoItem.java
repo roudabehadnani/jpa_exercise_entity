@@ -1,14 +1,26 @@
 package com.example.jpa_exercise_entity.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+
+@Entity
 public class TodoItem {
 
+    @Id
+    @GeneratedValue()
     private String todoId;
+
+    @Column(length = 200, nullable = false)
     private String title;
+
+    @Column(length = 400, nullable = false)
     private String description;
+
+    @Column(nullable = false)
     private LocalDateTime deadline;
+
     private boolean done = false;
 
     public TodoItem() {
