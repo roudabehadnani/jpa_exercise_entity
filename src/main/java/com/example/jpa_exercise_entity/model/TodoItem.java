@@ -1,5 +1,7 @@
 package com.example.jpa_exercise_entity.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -9,7 +11,8 @@ import java.util.Objects;
 public class TodoItem {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String todoId;
 
     @Column(length = 200, nullable = false)
@@ -23,7 +26,7 @@ public class TodoItem {
 
     private boolean done = false;
 
-    public TodoItem() {
+    protected TodoItem() {
     }
 
     public TodoItem(String title, String description, LocalDateTime deadline) {
