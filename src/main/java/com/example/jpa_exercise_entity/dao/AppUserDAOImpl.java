@@ -33,7 +33,7 @@ public class AppUserDAOImpl implements AppUserDAO{
     @Transactional
     @Override
     public void delete(AppUser appUser) {
-        findById(appUser.getUserId());
+//        findById(appUser.getUserId());
         entityManager.remove(appUser);
     }
 }
